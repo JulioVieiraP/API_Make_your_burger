@@ -9,6 +9,12 @@ class BurgerViewSet(viewsets.ModelViewSet):
     queryset = Burger.objects.all()
     serializer_class = BurgerSerializer
 
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        burgers = {"burgers": serializer.data}
+        return Response(burgers)
+
     @action(detail=False, methods=["get"])
     def ingredientes(self, request):
         paes = Ingrediente.objects.filter(tipo="pao")
