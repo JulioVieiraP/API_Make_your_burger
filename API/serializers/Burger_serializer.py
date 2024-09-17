@@ -15,6 +15,8 @@ class StatusSerializer(serializers.ModelSerializer):
 
 
 class BurgerSerializer(serializers.ModelSerializer):
+    opcionais = serializers.JSONField()
+
     class Meta:
         model = Burger
-        fields = "__all__"
+        fields = ["id", "nome", "carne", "pao", "opcionais", "status"]

@@ -33,6 +33,7 @@ class BurgerViewSetTest(APITestCase):
     def test_create_burger(self):
         url = reverse("burgers-list")
         response = self.client.post(url, self.burger_data, format="json")
+        print(response.data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data["nome"], self.burger_data["nome"])
         self.assertEqual(response.data["carne"], self.burger_data["carne"])
