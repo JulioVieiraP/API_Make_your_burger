@@ -89,11 +89,11 @@ CORS_ALLOWED_ORIGINS = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("make_your_burger_db"),
-        "USER": os.environ.get("admin"),
-        "PASSWORD": os.environ.get("5rIrYUXnmYMvPrA4rAjZwMKE7BviKh3d"),
-        "HOST": os.environ.get("dpg-cs8oer5ds78s738itsfg-a"),
-        "PORT": os.environ.get("5432"),
+        "DB_NAME": "make_your_burger_db",
+        "DB_USER": "admin",
+        "DB_PASSWORD": "5rIrYUXnmYMvPrA4rAjZwMKE7BviKh3d",
+        "DB_HOST": "dpg-cs8oer5ds78s738itsfg-a",
+        "DB_PORT": "5432",
     }
 }
 
