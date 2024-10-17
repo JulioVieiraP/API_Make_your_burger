@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -87,8 +88,12 @@ CORS_ALLOWED_ORIGINS = [
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("make_your_burger_db"),
+        "USER": os.environ.get("admin"),
+        "PASSWORD": os.environ.get("5rIrYUXnmYMvPrA4rAjZwMKE7BviKh3d"),
+        "HOST": os.environ.get("dpg-cs8oer5ds78s738itsfg-a"),
+        "PORT": os.environ.get("5432"),
     }
 }
 
